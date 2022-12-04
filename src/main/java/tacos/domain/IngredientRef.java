@@ -1,4 +1,4 @@
-package tacos.data;
+package tacos.domain;
 
 import lombok.Data;
 
