@@ -40,7 +40,7 @@ public class DesignTacoController {
         Iterable<Ingredient> ingredients = ingredientRepo.findAll();
         Type[] types = Type.values();
         for (Type type : types) {
-            model.addAttribute(type.toString().toLowerCase(), filterByType((List<Ingredient>) ingredients, type));
+            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
     }
 
@@ -62,6 +62,7 @@ public class DesignTacoController {
     @PostMapping
     public String processTaco(@Valid Taco taco, Errors errors,  @ModelAttribute TacoOrder tacoOrder) {
         if(errors.hasErrors()){
+            log.info("Processing taco: {}", errors.getAllErrors());
             return "design";
         }
         tacoOrder.addTaco(taco);
@@ -69,8 +70,9 @@ public class DesignTacoController {
         return "redirect:/orders/current";
     }
 
-    private Iterable<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
-        return ingredients
+    private Iterable<Ingredient> filterByType(Iterable<Ingredient> ingredients, Type type) {
+        List<Ingredient> ingredientList = (List<Ingredient>) ingredients;
+        return ingredientList
                 .stream()
                 .filter(ingredient -> ingredient.getType().equals(type))
                 .collect(Collectors.toList());
