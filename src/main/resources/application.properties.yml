@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    driverClassName: org.h2.Driver
-    generate-unique-name: false
-    name: tacocloud
-

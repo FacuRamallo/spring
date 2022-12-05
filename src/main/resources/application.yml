@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    driverClassName: org.h2.Driver
+    generate-unique-name: false
+    name: tacoCloud
+    username: sa
+    password: password
+  sql:
+    init:
+      continue-on-error: false
