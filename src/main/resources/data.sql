@@ -1,15 +1,14 @@
-delete from Ingredient_Ref;
-delete from Taco;
-delete from Taco_Order;
-delete from Ingredient;
-
-insert into Ingredient (id, name, type) values ('FLTO', 'Flour Tortilla', 'WRAP');
-insert into Ingredient (id, name, type) values ('COTO', 'Corn Tortilla', 'WRAP');
-insert into Ingredient (id, name, type) values ('GRBF', 'Ground Beef', 'PROTEIN');
-insert into Ingredient (id, name, type) values ('CARN', 'Carnitas', 'PROTEIN');
-insert into Ingredient (id, name, type) values ('TMTO', 'Diced Tomatoes', 'VEGGIES');
-insert into Ingredient (id, name, type) values ('LETC', 'Lettuce', 'VEGGIES');
-insert into Ingredient (id, name, type) values ('CHED', 'Cheddar', 'CHEESE');
-insert into Ingredient (id, name, type) values ('JACK', 'Monterrey Jack', 'CHEESE');
-insert into Ingredient (id, name, type) values ('SLSA', 'Salsa', 'SAUCE');
-insert into Ingredient (id, name, type) values ('SRCR', 'Sour Cream', 'SAUCE');
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('FLTO', 'Flour Tortilla', 0);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('COTO', 'Corn Tortilla', 0);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('GRBF', 'Ground Beef', 1);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('CARN', 'Carnitas', 1);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('TMTO', 'Diced Tomatoes', 2);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('LETC', 'Lettuce', 2);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('CHED', 'Cheddar', 3);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('JACK', 'Monterrey Jack', 3);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('SLSA', 'Salsa', 4);
+INSERT INTO INGREDIENT (ID, NAME, TYPE) VALUES ('SRCR', 'Sour Cream', 4);
+INSERT INTO USERS (id, username, password, fullname, street, city, state, zip, phone_number)
+           VALUES (1000, 'admin', '$2a$12$5T5W2YH69N7dOpRZUdc6aOTJXQldGucCMO9o9ErH98ckOUitEsD3.', 'admin', null, null, null, null, null);
+INSERT INTO USERS (id, username, password, fullname, street, city, state, zip, phone_number)
+           VALUES (1001, 'user1', '$2a$12$7frlriSJNsVtqZNE8VQjKOvz5r1k55dXa.QAkokR6hql0nTihtYvu', 'user1', null, null, null, null, null);
